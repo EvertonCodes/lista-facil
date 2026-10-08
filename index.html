@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista Fácil — meu dia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">✓</div>
+        <div>
+          <span class="eyebrow">LISTA FÁCIL</span>
+          <h1>Meu dia, <span>sem bagunça.</span></h1>
+          <p>Coloque no papel o que precisa acontecer hoje.</p>
+        </div>
+      </div>
+      <div class="today">
+        <span>HOJE</span>
+        <strong id="todayDate">--/--</strong>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div>
+        <span class="summary-label">andamento</span>
+        <div class="summary-number"><strong id="completed">0</strong><span> de <b id="total">0</b> concluídas</span></div>
+      </div>
+      <div class="progress-wrap" aria-label="Progresso das tarefas">
+        <div class="progress"><span id="progressBar"></span></div>
+        <small id="progressText">0% feito</small>
+      </div>
+    </section>
+
+    <section class="card form-card">
+      <div class="form-title"><span>+</span><strong>Nova tarefa</strong></div>
+      <form id="taskForm">
+        <input id="taskInput" type="text" maxlength="100" placeholder="Ex.: estudar para a prova de sexta" autocomplete="off" required>
+        <select id="priorityInput" aria-label="Prioridade">
+          <option value="baixa">Prioridade baixa</option>
+          <option value="media" selected>Prioridade média</option>
+          <option value="alta">Prioridade alta</option>
+        </select>
+        <button type="submit" id="submitBtn">Adicionar tarefa</button>
+      </form>
+    </section>
+
+    <section class="toolbar">
+      <div class="filters" role="group" aria-label="Filtros">
+        <button class="filter active" data-filter="todas">Tudo</button>
+        <button class="filter" data-filter="pendentes">Falta fazer</button>
+        <button class="filter" data-filter="concluidas">Já fiz</button>
+      </div>
+      <button id="clearCompleted" class="link-btn">limpar concluídas</button>
+    </section>
+
+    <section class="card list-card">
+      <div class="list-heading"><span>suas tarefas</span><span id="visibleCount">0 itens</span></div>
+      <div id="empty" class="empty">
+        <div class="empty-doodle">☼</div>
+        <h2>Está tudo tranquilo por aqui.</h2>
+        <p>Adicione uma tarefa e comece sua lista.</p>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+    <footer>feito para organizar o dia, uma tarefa de cada vez.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
